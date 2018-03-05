@@ -23,6 +23,8 @@ public class JavaFX extends Application {
 		
 	}
 	
+	//hej
+	
 	public Scene upg1(){
 		
 		Group root1 = new Group();
