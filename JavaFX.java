@@ -10,11 +10,13 @@ import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
 public class JavaFX extends Application {
-	
+
+	double i = 600;
+
 	Scene scene;
-	final double WIDTH = 600;
-	final double HEIGHT = 600;
-	
+	final double WIDTH = i;
+	final double HEIGHT = i;
+
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 
@@ -22,26 +24,24 @@ public class JavaFX extends Application {
 
 		primaryStage.setScene(scene);
 		primaryStage.show();
-		
+
 	}
-	
-	
-	public Scene upg1(){
-		
+
+	public Scene upg1() {
+
 		Group root1 = new Group();
-		
-	Scene scene = new Scene(root1,WIDTH,HEIGHT);
-		
-		Circle  rect = new Circle (Math.random()*600/6);
-		rect.setLayoutX(600/2);
-		rect.setLayoutY(600/2);
+
+		Scene scene = new Scene(root1, WIDTH, HEIGHT);
+
+		Circle rect = new Circle(Math.random() * 600 / 6);
+		rect.setLayoutX(i / 2);
+		rect.setLayoutY(i / 2);
 		rect.setFill(Color.RED);
-		
+
 		root1.getChildren().add(rect);
 
 		return scene;
 	}
-	
 
 	public static void main(String[] args) {
 		launch();
