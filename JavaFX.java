@@ -33,14 +33,18 @@ public class JavaFX extends Application {
 
 		Scene scene = new Scene(root1, WIDTH, HEIGHT);
 
-		Circle rect = new Circle(Math.random() * 600 / 6);
-		rect.setLayoutX(i / 2);
-		rect.setLayoutY(i / 2);
-		rect.setFill(Color.RED);
+		for (i = 0; i < 50; i++) {
 
-		root1.getChildren().add(rect);
+			Circle rect = new Circle(Math.random() * 600 / 6);
+			rect.setLayoutX(Math.random() * 600);
+			rect.setLayoutY(Math.random() * 600);
+			rect.setFill(
+					Color.rgb((int) (Math.random() * 255), (int) (Math.random() * 255), (int) (Math.random() * 255)));
 
+			root1.getChildren().add(rect);
+		}
 		return scene;
+
 	}
 
 	public static void main(String[] args) {
