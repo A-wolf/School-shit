@@ -14,27 +14,14 @@ public class Rocket extends Group {
 
 	public Rocket(double width) {
 
-		Rectangle body = new Rectangle(width, 2.75*width );
-		
+		Rectangle body = new Rectangle(width, 2.75 * width);
+
 		Polygon tip = new Polygon();
-		
-		tip.getPoints().addAll(new Double[]{
-	            (width/2), (-width),
-	            (width-150.0), (width),
-	            (width+75.0), (width) });
 
+		tip.getPoints().addAll(
+				new Double[] { (width / 2), (-1.5 * width), (width - 150.0), (width), (width + 75.0), (width) });
 
-		
-		//Circle tire1 = new Circle(width / 7);
-		//Circle tire2 = new Circle(width / 7);
-
-		//tire1.setTranslateY(2 * width / 3);
-		//tire2.setTranslateY(2 * width / 3);
-
-		//tire1.setTranslateX(width / 5);
-		//tire2.setTranslateX(width - width / 5);
-
-		this.getChildren().addAll(body, tip );
+		this.getChildren().addAll(body, tip);
 
 	}
 
@@ -48,17 +35,23 @@ public class Rocket extends Group {
 		}
 
 	}
+
 	double H = 5;
-	public void Hyperdrive () {
-		 H = 99;
+
+	public void Hyperdrive() {
+		H = 99;
+
+		System.out.println("Hyperdrive engaded");
 	}
 
 	public void Slow() {
-		 H = 5;
+		H = 5;
+
+		System.out.println("Hyperdrive disengaded");
 	}
-	
+
 	public void moveUp() {
-		
+
 		this.setTranslateY(this.getTranslateY() - H);
 	}
 
@@ -67,19 +60,12 @@ public class Rocket extends Group {
 	}
 
 	public void moveLeft() {
-		double deg = this.getRotate();
-		deg = Math.toRadians(deg);
-
-		this.setTranslateY(this.getTranslateY() - Math.sin(deg) * H);
-		this.setTranslateX(this.getTranslateX() - Math.cos(deg) * H);
+		this.setRotate(this.getRotate() + 5);
 	}
 
 	public void moveRight() {
-		double deg = this.getRotate();
-		deg = Math.toRadians(deg);
+		this.setRotate(this.getRotate() + 5);
 
-		this.setTranslateY(this.getTranslateY() + Math.sin(deg) * H);
-		this.setTranslateX(this.getTranslateX() + Math.cos(deg) * H);
 	}
 
 }
