@@ -52,19 +52,30 @@ public class Rocket extends Group {
 
 	public void moveUp() {
 
-		this.setTranslateY(this.getTranslateY() - H);
+		double deg = this.getRotate();
+		deg = Math.toRadians(deg+90);
+
+		this.setTranslateY(this.getTranslateY() - Math.sin(deg) * H);
+		this.setTranslateX(this.getTranslateX() - Math.cos(deg) * H);
+
 	}
 
 	public void moveDown() {
-		this.setTranslateY(this.getTranslateY() + H);
+
+		double deg = this.getRotate();
+		deg = Math.toRadians(deg+90);
+
+		this.setTranslateY(this.getTranslateY() + Math.sin(deg) * H);
+		this.setTranslateX(this.getTranslateX() + Math.cos(deg) * H);
+
 	}
 
 	public void moveLeft() {
-		this.setRotate(this.getRotate() + 5);
+		this.setRotate(this.getRotate() - H/5);
 	}
 
 	public void moveRight() {
-		this.setRotate(this.getRotate() + 5);
+		this.setRotate(this.getRotate() + H/5);
 
 	}
 
