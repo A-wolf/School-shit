@@ -21,7 +21,6 @@ public class Aaah_Joar_Lagerstedt {
 			
 			int Doctor = reader.readLine().length();
 			
-			
 			if(Doctor <= Jon){
 				System.out.println("go");
 			}
